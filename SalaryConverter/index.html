@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Salary Converter App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        html {
+            font-family: Roboto, sans-serif;
+            font-size: 14px
+        }
+
+        @media screen and (min-width:768px) {
+            html {
+                font-size: 16px
+            }
+            .container {
+                width: 70%
+            }
+        }
+
+        #index-banner .header {
+            font-size: 3.2em
+        }
+
+        #index-banner .title {
+            font-size: 1.4em
+        }
+
+        #index-banner .header,
+        #index-banner .title {
+            padding: .4em;
+            letter-spacing: .06em
+        }
+
+        #index-main>.row {
+            margin: 1em 0
+        }
+
+        #index-main .input-field {
+            padding: 1em .5em;
+            position: relative
+        }
+
+        #index-main .input-field input {
+            outline: 0;
+            border: none;
+            border-bottom: 1px solid #868686;
+            padding: .5em 0;
+            margin-bottom: 1px;
+            border-radius: 0
+        }
+
+        #index-main .input-field input:focus {
+            border-bottom: 2px solid #0e754e;
+            margin-bottom: 0;
+            box-shadow: none
+        }
+
+        #index-main .input-field input:focus+label {
+            color: #0e754e;
+            font-weight: 700
+        }
+
+        #index-main .input-field label {
+            top: 0;
+            font-size: .7em;
+            color: #b4b4b4
+        }
+
+        .convert-btn {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .4), 0 6px 20px 0 rgba(0, 0, 0, .19)
+        }
+
+        .convert-btn:after {
+            content: '';
+            background-color: #9c9c9c;
+            display: block;
+            position: absolute;
+            padding-top: 30%;
+            padding-left: 120%;
+            margin-left: -20px;
+            margin-top: -25%;
+            opacity: 0;
+            transition: all .6s
+        }
+
+        .convert-btn:focus {
+            box-shadow: 5px 8px 18px 0 rgba(0, 0, 0, .4), 0 16px 20px 0 rgba(0, 0, 0, .19)
+        }
+
+        .convert-btn:active:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s
+        }
+
+        .table-custom td,
+        .table-custom th {
+            border: none;
+            border-bottom: 1px solid #dee2e6
+        }
+
+        #copyright {
+            padding: 30px 0 10px
+        }
+    </style>
+</head>
+
+<body ng-app="myApp">
+    <header id="index-banner" class="container">
+        <div class="text-center">
+            <h1 class="header text-danger" title="Salary Converter">Salary Converter</h1>
+            <div class="row d-block">
+                <h2 class="title font-weight-light" title="Chuyển lương từ Gross sang Net và ngược lại">Chuyển lương từ Gross sang Net và ngược lại</h2>
+            </div>
+        </div>
+    </header>
+    <section ng-controller="myCtrl" id="index-main" class="container">
+        <div class="row">
+            <div class="w-100">
+                <h4 class="text-info">Thu nhập</h4>
+            </div>
+            <div class="input-field col-sm-4">
+                <input ng-model="INCOME.VND" class="form-control" id="number" type="number" step="500000" min="0">
+                <label for="vnd" class="position-absolute">VND</label>
+            </div>
+            <div class="input-field col-sm-4">
+                <input ng-model="INCOME.USD" class="form-control" type="number" step="10" min="0">
+                <label for="usd" class="position-absolute">USD</label>
+            </div>
+            <div class="input-field col-sm-4">
+                <input ng-model="INCOME.RATIO" class="form-control" type="number" step="10" min="0">
+                <label for="radio" class="position-absolute">Tỉ giá</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="w-100">
+                <h4 class="text-info">Bảo hiểm</h4>
+            </div>
+            <div class="input-field col-sm-3">
+                <input ng-model="INSURANCE.MIN_BASE_SALARY" class="form-control" type="number" step="100000" min="0">
+                <label for="min-base-salary" class="position-absolute">Lương tối thiểu chung (vnd)</label>
+            </div>
+            <div class="input-field col-sm-3">
+                <input ng-model="INSURANCE.MIN_REGION_SALARY" class="form-control" type="number" step="100000" min="0">
+                <label for="min-region-salary" class="position-absolute">Lương tối thiểu vùng (vnd)</label>
+            </div>
+            <div class="input-field col-sm-2">
+                <input ng-model="INSURANCE.SOCIAL" class="form-control" type="number" step="0.5" min="0">
+                <label for="social" class="position-absolute">Xã hội (%)</label>
+            </div>
+            <div class="input-field col-sm-2">
+                <input ng-model="INSURANCE.HEALTH" class="form-control" type="number" step="0.5" min="0">
+                <label for="health" class="position-absolute">Y tế (%)</label>
+            </div>
+            <div class="input-field col-sm-2">
+                <input ng-model="INSURANCE.UNEMPLOY" class="form-control" type="number" step="0.5" min="0">
+                <label for="unemploy" class="position-absolute">Thấp nghiệp (%)</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="w-100">
+                <h4 class="text-info">Giảm trừ gia cảnh</h4>
+            </div>
+            <div class="input-field col-sm-4">
+                <input ng-model="CIRCUM_REDUCTION.PERSONAL" class="form-control" type="number" step="100000" min="0">
+                <label for="personal" class="position-absolute">Cá nhân (vnd)</label>
+            </div>
+            <div class="input-field col-sm-4">
+                <input ng-model="CIRCUM_REDUCTION.DEPENDANT" class="form-control" type="number" step="100000" min="0">
+                <label for="dependant" class="position-absolute">Phụ thuộc (vnd)</label>
+            </div>
+            <div class="input-field col-sm-4">
+                <input ng-model="CIRCUM_REDUCTION.DEPENTDANTS" class="form-control" type="number" min="0">
+                <label for="depentdant-number" class="position-absolute">Số người phụ thuộc</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mx-auto text-center">
+                <button ng-click="grossToNet()" class="btn btn-dark btn-lg convert-btn">GROSS => NET</button>
+                <button ng-click="netToGross()" class="btn btn-dark btn-lg convert-btn">NET => GROSS</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="w-100 text-right">
+                <h6>
+                    <code>GROSS: {{ grossSalary | number:0 }} (VND) &#8776; {{ grossSalary / INCOME.RATIO | number:0 }} (USD)</code>
+                </h6>
+                <h6>
+                    <code>NET: {{ netSalary | number:0 }} (VND) &#8776; {{ netSalary / INCOME.RATIO | number:0 }} (USD)</code>
+                </h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="w-100">
+                <h4 class="text-info">Diễn giải chi tiết (VND)</h4>
+            </div>
+            <table class="table table-sm table-custom text-right">
+                <tr>
+                    <th>Lương GROSS</th>
+                    <td>{{ grossSalary | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Bảo hiểm xã hội ({{ INSURANCE.SOCIAL }}%)</td>
+                    <td>-{{ explainDetails.socialIns | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Bảo hiểm y tế ({{ INSURANCE.HEALTH }}%)</td>
+                    <td>-{{ explainDetails.healthIns | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Bảo hiểm thất nghiệp ({{ INSURANCE.UNEMPLOY }}%)</td>
+                    <td>-{{ explainDetails.unemployIns | number:0 }}</td>
+                </tr>
+                <tr>
+                    <th>Thu nhập trước thuế</th>
+                    <td>{{ explainDetails.incomeBeforeTax | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Giảm trừ gia cảnh bản thân</td>
+                    <td>-{{ CIRCUM_REDUCTION.PERSONAL | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Giảm trừ gia cảnh người phụ thuộc</td>
+                    <td>-{{ explainDetails.dependantRed | number:0 }}</td>
+                </tr>
+                <tr>
+                    <th>Thu nhập chịu thuế</th>
+                    <td>{{ explainDetails.incomeTax | number:0 }}</td>
+                </tr>
+                <tr>
+                    <th>Thuế thu nhập cá nhân</th>
+                    <td>-{{ totalIncomeTax | number:0 }}</td>
+                </tr>
+                <tr>
+                    <th>Lương NET
+                        <p class="font-weight-light font-italic">
+                            <small>(Thu nhập trước thuế - Thuế thu nhập cá nhân)</small>
+                        </p>
+                    </th>
+                    <td>{{ netSalary | number:0 }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <div class="w-100">
+                <h4 class="text-info">Chi tiết thuế thu nhập cá nhân (VND)</h4>
+            </div>
+            <table class="table table-sm table-custom text-right">
+                <tr>
+                    <th>Mức chịu thuế</th>
+                    <th>Thuế suất</th>
+                    <th>Tiền nộp</th>
+                </tr>
+                <tr>
+                    <td>Đến 5 triệu VND</td>
+                    <td>5%</td>
+                    <td>{{ personalIncomeTaxDetails.zeroToFiveM | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Trên 5 triệu VND đến 10 triệu VND</td>
+                    <td>10%</td>
+                    <td>{{ personalIncomeTaxDetails.fiveToTenM | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Trên 10 triệu VND đến 18 triệu VND</td>
+                    <td>15%</td>
+                    <td>{{ personalIncomeTaxDetails.tenToEighteenM | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Trên 18 triệu VND đến 32 triệu VND</td>
+                    <td>20%</td>
+                    <td>{{ personalIncomeTaxDetails.eighteenToThirtyTwoM | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Trên 32 triệu VND đến 52 triệu VND</td>
+                    <td>25%</td>
+                    <td>{{ personalIncomeTaxDetails.thirtyTwoToFiftyTwoM | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Trên 52 triệu VND đến 80 triệu VND</td>
+                    <td>30%</td>
+                    <td>{{ personalIncomeTaxDetails.fiftyTwoToEightyM | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Trên 80 triệu VND</td>
+                    <td>35%</td>
+                    <td>{{ personalIncomeTaxDetails.greaterThanEightyM | number:0 }}</td>
+                </tr>
+                <tr>
+                    <th>Tổng thuế</th>
+                    <td></td>
+                    <td>{{ totalIncomeTax | number:0 }}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="row">
+            <div class="w-100">
+                <h4 class="text-info">Người sử dụng lao động trả (VND)</h4>
+            </div>
+            <table class="table table-sm table-custom text-right">
+                <tr>
+                    <th>Lương GROSS</th>
+                    <td>{{ grossSalary | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Bảo hiểm xã hội ({{ EMPLOYER.SOCIAL }}%)</td>
+                    <td>{{ employerPaying.socialIns | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Bảo hiểm y tế ({{ EMPLOYER.HEALTH }}%)</td>
+                    <td>{{ employerPaying.healthIns | number:0 }}</td>
+                </tr>
+                <tr>
+                    <td>Bảo hiểm thất nghiệp ({{ EMPLOYER.UNEMPLOY }}%)</td>
+                    <td>{{ employerPaying.unemployIns | number:0 }}</td>
+                </tr>
+                <tr>
+                    <th>Tổng cộng</th>
+                    <td>{{ employerPaying.total | number:0 }}</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <footer id="copyright" class="bg-warning">
+        <div class="container">
+            <div class="row">
+                <div class="col">Copyright by
+                    <a href="https://github.com/anhdo95">AnhDo Dev</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', ['$scope', function ($scope) {
+            // Constants
+            $scope.INCOME = {
+                VND: 10000000,
+                USD: 0,
+                RATIO: 22700
+            };
+            $scope.INSURANCE = {
+                MIN_BASE_SALARY: 1300000, // Social and Health insurance can't greater than 20 times
+                MIN_REGION_SALARY: 3980000, // Unemploy insurance can't greater than 20 times
+                SOCIAL: 8,
+                HEALTH: 1.5,
+                UNEMPLOY: 1
+            };
+            $scope.CIRCUM_REDUCTION = {
+                PERSONAL: 9000000,
+                DEPENDANT: 3600000,
+                DEPENTDANTS: 0
+            };
+            $scope.EMPLOYER = {
+                SOCIAL: 18,
+                HEALTH: 3,
+                UNEMPLOY: 1
+            };
+            // Variables
+            $scope.grossSalary = 0;
+            $scope.netSalary = 0;
+            $scope.totalIncomeTax = 0;
+
+            $scope.explainDetails = {
+                socialIns: 0,
+                healthIns: 0,
+                unemployIns: 0,
+                incomeBeforeTax: 0,
+                dependantRed: 0,
+                incomeTax: 0,
+            };
+            $scope.personalIncomeTaxDetails = {
+                zeroToFiveM: 0,
+                fiveToTenM: 0,
+                tenToEighteenM: 0,
+                eighteenToThirtyTwoM: 0,
+                thirtyTwoToFiftyTwoM: 0,
+                fiftyTwoToEightyM: 0,
+                greaterThanEightyM: 0
+            };
+            $scope.employerPaying = {
+                socialIns: 0,
+                healthIns: 0,
+                unemployIns: 0,
+                total: 0
+            };
+
+            $scope.grossToNet = function () {
+                if (!$scope.CIRCUM_REDUCTION.PERSONAL) {
+                    $scope.CIRCUM_REDUCTION.PERSONAL = 0;
+                }
+                // Explain details table
+                $scope.grossSalary = Math.round($scope.INCOME.VND + ($scope.INCOME.USD * $scope.INCOME.RATIO));
+                $scope.explainDetails.socialIns = Math.min($scope.grossSalary, $scope.INSURANCE.MIN_BASE_SALARY * 20) * ($scope.INSURANCE.SOCIAL / 100);
+                $scope.explainDetails.healthIns = Math.min($scope.grossSalary, $scope.INSURANCE.MIN_BASE_SALARY * 20) * ($scope.INSURANCE.HEALTH / 100);
+                $scope.explainDetails.unemployIns = Math.min($scope.grossSalary, $scope.INSURANCE.MIN_REGION_SALARY * 20) * ($scope.INSURANCE.UNEMPLOY / 100);
+                $scope.explainDetails.incomeBeforeTax = $scope.grossSalary - ($scope.explainDetails.socialIns + $scope.explainDetails.healthIns + $scope.explainDetails.unemployIns);
+                $scope.explainDetails.dependantRed = $scope.CIRCUM_REDUCTION.DEPENDANT * $scope.CIRCUM_REDUCTION.DEPENTDANTS;
+                $scope.explainDetails.incomeTax = Math.max(0, $scope.explainDetails.incomeBeforeTax - ($scope.CIRCUM_REDUCTION.PERSONAL + $scope.explainDetails.dependantRed));
+
+                // Taxes table
+                $scope.personalIncomeTaxDetails.zeroToFiveM = taxesCalculation(0, 5000000, 5);
+                $scope.personalIncomeTaxDetails.fiveToTenM = taxesCalculation(5000000, 10000000, 10);
+                $scope.personalIncomeTaxDetails.tenToEighteenM = taxesCalculation(10000000, 18000000, 15);
+                $scope.personalIncomeTaxDetails.eighteenToThirtyTwoM = taxesCalculation(18000000, 32000000, 20);
+                $scope.personalIncomeTaxDetails.thirtyTwoToFiftyTwoM = taxesCalculation(32000000, 52000000, 25);
+                $scope.personalIncomeTaxDetails.fiftyTwoToEightyM = taxesCalculation(52000000, 80000000, 30);
+                $scope.personalIncomeTaxDetails.greaterThanEightyM = taxesCalculation(80000000, Number.MAX_VALUE, 35);
+
+                $scope.totalIncomeTax = 0;
+                for (var property in $scope.personalIncomeTaxDetails) {
+                    if (!$scope.personalIncomeTaxDetails[property]) {
+                        break;
+                    }
+                    $scope.totalIncomeTax += $scope.personalIncomeTaxDetails[property];
+                }
+
+                $scope.netSalary = Math.round($scope.explainDetails.incomeBeforeTax - $scope.totalIncomeTax);
+
+                // Employer paying table
+                $scope.employerPaying.socialIns = Math.min($scope.grossSalary, $scope.INSURANCE.MIN_BASE_SALARY * 20) * ($scope.EMPLOYER.SOCIAL / 100);
+                $scope.employerPaying.healthIns = Math.min($scope.grossSalary, $scope.INSURANCE.MIN_BASE_SALARY * 20) * ($scope.EMPLOYER.HEALTH / 100);
+                $scope.employerPaying.unemployIns = Math.min($scope.grossSalary, $scope.INSURANCE.MIN_REGION_SALARY * 20) * ($scope.EMPLOYER.UNEMPLOY / 100);
+                $scope.employerPaying.total = $scope.grossSalary + $scope.employerPaying.socialIns + $scope.employerPaying.healthIns + $scope.employerPaying.unemployIns;
+            };
+
+            $scope.netToGross = function () {
+                $scope.netSalary = 0;
+                var oldVND = $scope.INCOME.VND;
+                var totalSalary = oldVND + ($scope.INCOME.USD * $scope.INCOME.RATIO);
+
+                for (; $scope.netSalary < totalSalary; $scope.INCOME.VND += increaseEqualTotalSalary(totalSalary)) {
+                    $scope.grossToNet(); // recalculating until Net equals to Total salary
+                }
+                $scope.INCOME.VND = oldVND;
+
+                function increaseEqualTotalSalary(totalSalary) {
+                    var residual = totalSalary - $scope.netSalary;
+                    if (residual <= 10)
+                        return 1;
+                    if (residual <= 100)
+                        return 10;
+                    if (residual <= 1000)
+                        return 100;
+                    if (residual <= 10000)
+                        return 1000;
+                    return 10000;
+                }
+            };
+
+            function taxesCalculation(min, max, taxPercentage) {
+                return bound($scope.explainDetails.incomeTax, min, max) * (taxPercentage / 100);
+            }
+
+            function bound(value, min, max) {
+                if (value >= max)
+                    return max - min;
+                if (value > min)
+                    return value - min;
+                return 0;
+            }
+        }]);
+    </script>
+</body>
+
+</html>
