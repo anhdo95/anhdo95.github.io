@@ -1,0 +1,156 @@
+html,
+body {
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  color: #4d4e53;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: #383838;
+  text-decoration: none;
+}
+
+#animated-menu {
+  position: fixed;
+  left: 300px;
+  top: 0;
+  z-index: 1000;
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#animated-menu.collapsed {
+  left: 0;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #ee6745;
+  margin: 2px 0 6px;
+  transition: 0.4s;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  border-right: solid;
+  border-color: #00161666;
+  transition: 0.3s;
+}
+
+#navbar.collapsed {
+  left: -300px;
+  width: 0;
+}
+
+#navbar header {
+  color: #222;
+  text-align: center;
+}
+
+#navbar header h1 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#navbar ul {
+  height: 85%;
+  padding: 0;
+  overflow: hidden auto;
+}
+
+#navbar ul li {
+  border-top: 1px solid #afafaf;
+}
+
+#navbar ul li a {
+  display: block;
+  padding: 0.5rem 1.5rem;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+}
+
+#content {
+  margin-left: 300px;
+  min-height: 90vh;
+  padding: 1rem 3rem;
+  transition: margin-left 0.4s;
+}
+
+#content.collapsed {
+  margin-left: 0;
+}
+
+#filter-form {
+  padding: 0 0.5rem;
+  text-align: center;
+}
+
+#filter-form  #search-box {
+  padding: 0.5rem 1rem;
+  width: 100%;
+}
+
+#content .idiom .meaning {
+  margin-left: 1rem;
+}
+
+#content .idiom .examples {
+  margin-left: 0;
+  font-style: italic;
+}
+
+#footer {
+  position: relative;
+  left: 300px;
+  bottom: 0;
+  width: calc(100% - 300px);
+  padding: 1rem 1rem 0;
+  color: #f2f2f2;
+  background-color: rgba(50, 50, 50, 0.9);
+  font-size: 0.8rem;
+  text-align: right;
+  overflow-y: auto;
+}
+
+#footer.collapsed {
+  left: 0;
+  width: 100%;
+}
+
+/* Custom Navigation's Scrollbar */
+#navbar ul::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+#navbar ul::-webkit-scrollbar-track {
+  background-color: #dadada;
+  border-radius: 1rem;
+}
+
+#navbar ul::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0;
+  border-radius: 1rem;
+}
+
+#navbar ul::-webkit-scrollbar-thumb {
+  background-color: #a7a7a7;
+}
+
+
