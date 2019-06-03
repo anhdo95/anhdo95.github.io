@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Đỗ Đình Anh - Web Developer Resume</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,700|Raleway:100,300">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="ad.css">
+  <link rel="stylesheet" href="main.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="main.js"></script>
+</head>
+
+<body class="ad-bg-light-gray" ng-app="cvApp" ng-controller="cvCtrl">
+  <main class="page-wrapper ad-d-flex">
+    <section class="left ad-box ad-container ad-bg-white">
+      <div class="personal-info ad-d-flex">
+        <div class="avatar">
+          <img src="assets/images/avatar.JPG" alt="Avatar" width="100%" height="100%">
+        </div>
+        <div class="contact ad-ml-4">
+          <h1 class="ad-my-0 ad-heading-letter-spacing">Do Dinh Anh</h1>
+          <p><i class="fa fa-fw fa-suitcase"></i>Web Developer</p>
+          <p><i class="fa fa-fw fa-home"></i>Hanoi, Vietnam</p>
+          <p><i class="fa fa-fw fa-phone"></i>+084 987 196 695</p>
+          <p>
+            <i class="fa fa-fw fa-envelope"></i>
+            <a href="mailto:dinhanhdo95@gmail.com">dinhanhdo95@gmail.com</a>
+          </p>
+        </div>
+      </div>
+      <hr />
+      <div class="summary">
+        <h2 class="ad-heading-letter-spacing"><i class="fa fa-fw fa fa-pencil"></i>Summary</h2>
+        <p>{{ summary }}</p>
+        <div>
+          <a class="ad-btn ad-btn-teal ad-mt-2" href="assets/DoDinhAnh_Resume.pdf">
+            <i class="fa fa-fw fa-download"></i> MY CV
+          </a>
+        </div>
+      </div>
+      <hr />
+      <div class="skills">
+        <h2 class="ad-heading-letter-spacing"><i class="fa fa-fw fa fa-asterisk"></i>Skills</h2>
+        <div ng-repeat="skill in skills">
+          <p>{{ skill.name }}</p>
+          <ul>
+            <li ng-repeat="value in skill.values">{{ value }}</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="languages">
+        <h2 class="ad-heading-letter-spacing"><i class="fa fa-fw fa fa-globe"></i>Languages</h2>
+        <div ng-repeat="language in languages">
+          <p>{{ language.name }}</p>
+          <div class="progress">
+            <div class="bar" ng-style="{{ getWidthStyle(language.proficiency) }}">{{ language.proficiency }}%</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="right ad-box ad-ml-3 ad-p-3 ad-bg-white">
+      <div class="working-experiences">
+        <h2 class="ad-mt-0 ad-heading-letter-spacing">
+          <i class="fa fa-fw fa-suitcase"></i>Working Experiences
+        </h2>
+        <div class="company" ng-repeat="experience in workingExperiences">
+          <h4 class="ad-ml-2">{{ experience.position }}</h4>
+          <div class="project ad-px-4" ng-repeat="project in experience.projects">
+            <h5 class="ad-text-teal">
+              <i class="fa fa-fw fa-calendar"></i>
+              {{ project.startAt }} - <span ng-if="project.endAt">{{ project.endAt }}</span>
+              <span ng-if="!project.endAt" class="ad-bg-teal ad-p-1">Current</span>
+            </h5>
+            <ul>
+              <li><strong>Project</strong>: {{ project.projectName }}</li>
+              <li><strong>Project Description</strong>: {{ project.projectDescription }}
+              </li>
+              <li><strong>Team Size</strong>: {{ project.teamSize }}</li>
+              <li><strong>Responsiblities</strong>: {{ project.responsibilities }}</li>
+              <li><strong>Technologies</strong>: {{ project.technologies }}</li>
+            </ul>
+            <hr />
+          </div>
+        </div>
+      </div>
+      <div class="education ad-mt-3">
+        <h2 class="ad-mt-0 ad-heading-letter-spacing">
+          <i class="fa fa-fw fa-certificate"></i>Education and Qualification
+        </h2>
+        <div class="education">
+          <div class="ad-px-4" ng-repeat="edu in education">
+            <h5 class="ad-text-teal">
+              <i class="fa fa-fw fa-calendar"></i>
+              {{ edu.startAt }} - {{ edu.endAt }}
+            </h5>
+            <ul>
+              <li>
+                <strong>Certification</strong>:
+                <a href="{{ edu.certificateUrl }}" ng-if="edu.certificateUrl">{{ edu.certification }}</a>
+                <span ng-if="!edu.certificateUrl">{{ edu.certification }}</span>
+              </li>
+              <li><strong>Learning in</strong>: {{ edu.learningIn }}</li>
+              <li><strong>Specialized in</strong>: {{ edu.specializedIn }}</li>
+            </ul>
+            <hr />
+          </div>
+        </div>
+        <div class="qualitificaion">
+          <div class="ad-px-4" ng-repeat="qua in qualitification">
+            <h5 class="ad-text-teal">
+              <i class="fa fa-fw fa-calendar"></i>
+              {{ qua.startAt }} - {{ qua.endAt }}
+            </h5>
+            <ul>
+              <li>
+                <strong>Certification</strong>:
+                <a href="{{ qua.certificateUrl }}" ng-if="qua.certificateUrl">{{ qua.certification }}</a>
+                <span ng-if="!qua.certificateUrl">{{ qua.certification }}</span>
+              </li>
+              <li><strong>Learning in</strong>: {{ qua.learningIn }}</li>
+              <li><strong>Specialized in</strong>: {{ qua.specializedIn }}</li>
+            </ul>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer ad-bg-teal ad-p-1">
+    <p>Find me on social media.</p>
+    <ul class="social-media ad-d-inline-block">
+      <li><a href="#"><i class="fa fw fa-facebook-official"></a></i></li>
+      <li><a href="#"><i class="fa fw fa-instagram"></a></i></li>
+      <li><a href="#"><i class="fa fw fa-linkedin"></a></i></li>
+      <li><a href="https://github.com/anhdo95"><i class="fa fw fa-github"></a></i></li>
+    </ul>
+    <p>Powered by <a class="ad-text-white" href="https://github.com/anhdo95">AnhDo</a></p>
+  </footer>
+</body>
+
+</html>
