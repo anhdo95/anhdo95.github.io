@@ -1,28 +1,34 @@
 {
-  "summary": "I'm Do Dinh Anh, a web developer with 2 years of experience in Javascript technologies (which includes 1 year of experience of .NET development). Currently, I'm responsible for carrying out front-end design of almost projects at work. Besides that, learning new languages and technologies is what I am keen on (I self-taught ReactJS with 2 weeks). In my spare time, I prefer reading books as well. My favorite books are: Clean Code, Secrets of the Javascript Ninja and You don't know JS.",
+  "summary": "I'm Do Dinh Anh, a web developer with 2 years of experience in JavaScript and .NET technologies, with good knowledge of Object-Oriented and Design Patterns. Learning new languages and technologies is what I’m really keen on. I’m considered a teamplayer because I prefer to discuss innovative ideas with others and tend to work well within the group.",
   "skills": [
     {
-      "name": "Programming Languages",
+      "name": "Programming Languages:",
+      "values": [
+        "JavaScript, C#.NET",
+        "HTML5, CSS3"
+      ]
+    },
+    {
+      "name": "Frameworks/ Platforms:",
       "values": [
         "ReactJS, Angular",
-        "Webpack, Babel, ES6",
-        "jQuery, Twitter Bootstrap",
-        "ASP.NET MVC, Web API, Entity Framework",
-        "RestfulAPI, JSON, XML"
+        "Webpack, Babel",
+        "ES6, Typescript",
+        "jQuery, Sass, Twitter Bootstrap",
+        "ASP.NET MVC, Web API",
+        "Entity Framework"
       ]
     },
     {
-      "name": "Databases",
+      "name": "Database Management Systems:",
       "values": [
-        "Microsoft SQL",
-        "MySQL"
+        "MS SQL Server, MySQL"
       ]
     },
     {
-      "name": "Version Control",
+      "name": "Version Control:",
       "values": [
-        "Git (Git Shell & Github)",
-        "SVN (TortoiseSVN)"
+        "Git, SVN"
       ]
     }
   ],
@@ -33,7 +39,7 @@
     },
     {
       "name": "English",
-      "proficiency": 60
+      "proficiency": 65
     }
   ],
   "workingExperiences": [
@@ -41,31 +47,40 @@
       "position": "Web Developer / NTQ Solution",
       "projects": [
         {
-          "startAt": "Dec 2018",
+          "startAt": "Mar 2019",
           "endAt": "",
           "projectName": "Serimu Jvideos (Japan)",
-          "projectDescription": "A big system which contains a lot of plentiful kind of videos. It attracts creators and makers so that they be able to collaborate the site and makes viewers enjoy and wind down whenever they want.",
+          "projectDescription": "An enhanced experience video system. It attracts creators and makers to join the system so that they can improve, contribute to it and then viewers can enjoy and wind down whenever they want.",
           "teamSize": "22",
-          "responsibilities": "Meeting with teammates to get clear requirements. Design UI and develop the modules of the system.",
-          "technologies": "ReactJS, Redux, Webpack, SASS, Ant Design"
+          "responsibilities": "Communicate with customers and teammates to clarify requirements. Develop key modules of the system that saved around 20% of the development time of other functionalities",
+          "technologies": "ReactJS, Redux, Webpack, Sass, Ant Design"
+        },
+        {
+          "startAt": "Dec 2018",
+          "endAt": "Mar 2019",
+          "projectName": "Pronexus-Works (Japan)",
+          "projectDescription": "Develop a local desktop application, it’s one of a system lies in a huge ecosystem of the organization that is taking up 60% of finance in the Japanese market and manages tons of documents and links related to that field.",
+          "teamSize": "7",
+          "responsibilities": "Analyze specifications and recommend the best solutions to the customer. Design screens and build up features based on requirements",
+          "technologies": "WPF, WCF, Telerik UI, Oracle Database"
         },
         {
           "startAt": "Aug 2018",
           "endAt": "Dec 2018",
           "projectName": "M-Solutions ARMS (Japan)",
-          "projectDescription": "Dealing with the client side of a fire alarm management system so that the customer can completely be in control of problems accurately.",
+          "projectDescription": "Dealing with the client side of a firing alarm system so that the customer can completely be in control of problems accurately.",
           "teamSize": "6",
-          "responsibilities": "Meeting with customers and teammates to report daily works. Develop features and implement unit tests base on requirements.",
-          "technologies": "ReactJS, Redux, Saga, ImmutableJS, Reselect, Jest (Unit testing)"
+          "responsibilities": "Communicate with customers and teammates to report daily works. Build up features and implement unit tests based on requirements",
+          "technologies": "ReactJS, Redux, Saga, ImmutableJS, Reselect, Jest"
         },
         {
           "startAt": "May 2018",
           "endAt": "Aug 2018",
           "projectName": "M-Solutions Sale System (Japan)",
           "projectDescription": "Develop a sale and customer management system. Which has highly complicated kind of banking business.",
-          "teamSize": "20",
-          "responsibilities": "Building screens according to specifications and interact data across sophisticatedly existing services.",
-          "technologies": "Dynamics 365, jQuery, Javascript, CSS, HTML"
+          "teamSize": "18",
+          "responsibilities": "Build screens according to specifications. Interact data across sophisticatedly existing services. Write test cases and execute them",
+          "technologies": "Dynamics 365, jQuery, JavaScript, CSS3, HTML5"
         }
       ]
     },
@@ -73,7 +88,7 @@
       "position": "Web Developer / Powergate Software",
       "projects": [
         {
-          "startAt": "Oct 2017",
+          "startAt": "Nov 2017",
           "endAt": "Apr 2018",
           "projectName": "OneIT Mobile Landing (Australia)",
           "projectDescription": "Develop a mobile landing system. To better assist customers that can quickly give options and select suitable mobile phones conveniently.",
@@ -83,7 +98,7 @@
         },
         {
           "startAt": "Jun 2017",
-          "endAt": "Oct 2017",
+          "endAt": "Nov 2017",
           "projectName": "OneIT CoventryCRM (Australia)",
           "projectDescription": "A meeting management website can support you to book customer's appointments with anyone whenever they want, from wherever you are!",
           "teamSize": "6",
