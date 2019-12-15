@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,400i|Nunito:300,300i" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+        <link rel="manifest" href="img/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+        
+        <title>Do Dinh Anh &mdash; a web developer</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="container">
+        <nav class="sidebar">
+            <input class="d-none sidebar__checkbox" type="checkbox" id="sidebar__checkbox">
+        
+            <label for="sidebar__checkbox" class="sidebar__button">
+                <span class="sidebar__button-icon"></span>
+            </label>
+        
+            <div class="sidebar__background">
+                <figure class="sidebar__logo-box">
+                    <img class="sidebar__logo" src="img/logo.png" alt="Logo">
+                    <figcaption>
+                        <h2 class="heading-secondary heading-secondary--light sidebar__heading">AnhDD</h2>
+                    </figcaption>
+                </figure>
+                <ul class="sidebar__list">
+                    <li class="sidebar__item sidebar__item--active">
+                        <a href="#home" class="sidebar__link">
+                            <svg class="sidebar__icon">
+                                <use xlink:href="img/sprite.svg#icon-home"></use>
+                            </svg>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#about" class="sidebar__link">
+                            <svg class="sidebar__icon">
+                                <use xlink:href="img/sprite.svg#icon-user"></use>
+                            </svg>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#skills" class="sidebar__link">
+                            <svg class="sidebar__icon">
+                                <use xlink:href="img/sprite.svg#icon-bar-graph"></use>
+                            </svg>
+                            <span>Skills</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#experiences" class="sidebar__link">
+                            <svg class="sidebar__icon">
+                                <use xlink:href="img/sprite.svg#icon-area-graph"></use>
+                            </svg>
+                            <span>Experiences</span>
+                        </a>
+                    </li>
+                    <li class="sidebar__item">
+                        <a href="#education" class="sidebar__link">
+                            <svg class="sidebar__icon">
+                                <use xlink:href="img/sprite.svg#icon-open-book"></use>
+                            </svg>
+                            <span>Education</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <header id="home" class="header">
+            <h1 class="mb-md heading-primary heading-primary--light header__heading-main">
+                I'm Do Dinh Anh
+            </h1>
+            <h2 class="mb-md heading-secondary heading-secondary--light header__heading-sub">
+                A web developer
+            </h2>
+            <ul class="social header__social">
+                <li class="social__item">
+                    <a href="#" class="social__link" target="_blank">
+                        <svg class="social__icon">
+                            <use xlink:href="img/sprite.svg#icon-stackoverflow"></use>
+                        </svg>
+                        <span class="social__text">StackOverflow</span>
+                    </a>
+                </li>
+               <li class="social__item">
+                    <a href="https://www.linkedin.com/in/do-dinh-anh" class="social__link" target="_blank">
+                        <svg class="social__icon">
+                            <use xlink:href="img/sprite.svg#icon-linkedin"></use>
+                        </svg>
+                        <span class="social__text">Linkedin</span>
+                    </a>
+                </li>
+               <li class="social__item">
+                    <a href="#" class="social__link" target="_blank">
+                        <svg class="social__icon">
+                            <use xlink:href="img/sprite.svg#icon-twitter"></use>
+                        </svg>
+                        <span class="social__text">Twitter</span>
+                    </a>
+                </li>
+               <li class="social__item">
+                    <a href="https://join.skype.com/invite/jLNghLGY5zTS" class="social__link" target="_blank">
+                        <svg class="social__icon">
+                            <use xlink:href="img/sprite.svg#icon-skype"></use>
+                        </svg>
+                        <span class="social__text">Skype</span>
+                    </a>
+                </li>
+               <li class="social__item">
+                    <a href="https://github.com/anhdo95" class="social__link" target="_blank">
+                        <svg class="social__icon">
+                            <use xlink:href="img/sprite.svg#icon-github"></use>
+                        </svg>
+                        <span class="social__text">Github</span>
+                    </a>
+                </li>
+               <li class="social__item">
+                    <a href="#" class="social__link" target="_blank">
+                        <svg class="social__icon">
+                            <use xlink:href="img/sprite.svg#icon-facebook"></use>
+                        </svg>
+                        <span class="social__text">Facebook</span>
+                    </a>
+                </li>
+            </ul>
+        </header>
+
+        <section id="about" class="about">
+            <h2 class="mb-md text-center heading-secondary heading-secondary--special about__heading">About me</h2>
+        
+            <figure class="about__thumb">
+                <img src="img/me-large.jpg" alt="Do Dinh Anh" class="about__photo">
+            </figure>
+
+            <div class="about__summary">
+                <h3 class="mb-sm heading-tertiary">Summary</h3>
+                <p class="paragraph about__description">
+                    I'm Do Dinh Anh, a web developer with over 2 years of experience in <strong class="keyword">JavaScript</strong> and <strong class="keyword">.NET</strong>
+                        technologies, with good knowledge of <strong class="keyword">Object-Oriented</strong>, <strong class="keyword">Design Patterns</strong> and <strong class="keyword">UI, UX
+                        Design</strong>.
+                </p>
+                <p class="paragraph about__description">
+                    Learning new languages and technologies is what I’m really keen on. I’m considered a teamplayer because I prefer to
+                    discuss innovative ideas with others and tend to work well within the group.
+                </p>
+                <p class="mb-lg paragraph about__description">
+                    Besides, in order to keep my inspiration and motivation, I really love reading. My favorite books are <strong class="keyword">Clean Code</strong>,
+                    <strong class="keyword">You don't know JS series</strong>, <strong class="keyword">Secrets of the Javascript Ninja</strong>, <strong class="keyword">Taming the state in React</strong>, <strong class="keyword">Fullstack Vue</strong> and some more.
+                </p>
+                
+                <a class="btn btn--primary" href="file/my-cv.pdf" target="_blank">
+                    <svg class="btn__icon btn__icon--invisible">
+                        <use xlink:href="img/sprite.svg#icon-download"></use>
+                    </svg>
+                    <svg class="btn__icon btn__icon--visible">
+                        <use xlink:href="img/sprite.svg#icon-download"></use>
+                    </svg>
+                    <span class="text-uppercase">My CV</span>
+                </a>
+            </div>
+
+            <div class="about__contact">
+                <svg class="about__icon">
+                    <use xlink:href="img/sprite.svg#icon-phone"></use>
+                </svg>
+                <p class="about__text">(+84) 987 196 695</p>
+                <svg class="about__icon">
+                    <use xlink:href="img/sprite.svg#icon-mail"></use>
+                </svg>
+                <a class="about__text" href="mailto:dinhanhdo95@gmail.com">dinhanhdo95@gmail.com</a>
+                <svg class="about__icon">
+                    <use xlink:href="img/sprite.svg#icon-location-pin"></use>
+                </svg>
+                <p class="about__text">Ha noi, Vietnam</p>
+                <svg class="about__icon">
+                    <use xlink:href="img/sprite.svg#icon-globe"></use>
+                </svg>
+                <a class="about__text" href="https://anhdo95.github.io/">anhdo95.github.io</a>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <div class="skills__inner">
+                <h2 class="mb-md text-center heading-secondary heading-secondary--special-light skills__heading">
+                    Technical Skills
+                </h2>
+                <div class="card">
+                    <div class="card__picture card__picture--1"></div>
+                    <h4 class="card__heading">
+                        <span class="card__heading-text card__heading-text--1">Programming Languages</span>
+                    </h4>
+                    <ul class="card__details">
+                        <li class="card__detail-item">Javascript</li>
+                        <li class="card__detail-item">C#.NET</li>
+                        <li class="card__detail-item">HTML5, CSS3</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card__picture card__picture--2"></div>
+                    <h4 class="card__heading">
+                        <span class="card__heading-text card__heading-text--2">FRAMEWORKS & PLATFORMS</span>
+                    </h4>
+                    <ul class="card__details">
+                        <li class="card__detail-item">ReactJS, VueJS</li>
+                        <li class="card__detail-item">Webpack, Babel</li>
+                        <li class="card__detail-item">ES6, Typescript</li>
+                        <li class="card__detail-item">jQuery, Sass, Twitter Bootstrap</li>
+                        <li class="card__detail-item">ASP.NET MVC, Web API, EF</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card__side">
+                        <div class="card__picture card__picture--3"></div>
+                        <h4 class="card__heading">
+                            <span class="card__heading-text card__heading-text--3">Database & Version Control</span>
+                        </h4>
+                        <ul class="card__details">
+                            <li class="card__detail-item">MS SQL Server</li>
+                            <li class="card__detail-item">MySQL</li>
+                            <li class="card__detail-item">Git, SVN</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card__picture card__picture--4"></div>
+                    <h4 class="card__heading">
+                        <span class="card__heading-text card__heading-text--4">Foreign Language</span>
+                    </h4>
+                    <ul class="card__details">
+                        <li class="card__detail-item">Good english reading/writing
+                        <li class="card__detail-item">English verbal communication</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card__picture card__picture--5"></div>
+                    <h4 class="card__heading">
+                        <span class="card__heading-text card__heading-text--5">Soft Skills</span>
+                    </h4>
+                    <ul class="card__details">
+                        <li class="card__detail-item">Good time management</li>
+                        <li class="card__detail-item">Good presentation</li>
+                        <li class="card__detail-item">Good teamwork skill</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card__picture card__picture--6"></div>
+                    <h4 class="card__heading">
+                        <span class="card__heading-text card__heading-text--6">Others</span>
+                    </h4>
+                    <ul class="card__details">
+                        <li class="card__detail-item">Good understanding UI, UX design, RestfulAPI</li>
+                        <li class="card__detail-item">Good understanding of OOP methodologies</li>
+                        <li class="card__detail-item">Good understanding Agile and Scrum development process</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experiences" class="experiences">
+            <h2 class="mb-md heading-secondary heading-secondary--special experiences__heading">
+                Working Experiences
+            </h2>
+            <article class="experiences__box">
+                <div class="experiences__designation">
+                    <h3 class="heading-tertiary heading-tertiary--thin experiences__position">Web Developer</h3>
+                    <p class="experiences__company">NTQ Solution</p>
+                </div>
+        
+                <div class="text-center experiences__date experiences__date--1">
+                    <p class="experiences__date-invisible">
+                        <time datetime="2018-05">05/2018</time>
+                        &mdash;
+                        <time datetime="2019">Present</time>
+                    </p>
+                    <p class="experiences__date-visible">
+                        <time datetime="2018-05">05/2018</time>
+                        &mdash;
+                        <time datetime="2019">Present</time>
+                    </p>
+                </div>
+                <div class="experiences__projects">
+                    <ul class="experiences__project">
+                        <li>
+                            <strong>Project</strong>: Serimu Jvideos (Japan)
+                        </li>
+                        <li>
+                            <strong>Project Description</strong>: An enhanced experience video system. Viewers can enjoy and
+                            wind down
+                            whenever they want!
+                        </li>
+                        <li>
+                            <strong>Team Size</strong>: 22
+                        </li>
+                        <li>
+                            <strong>Responsibilities</strong>: Develop key modules of the system that saved around 20% of the
+                            development time of other functionalities
+                        </li>
+                        <li>
+                            <strong>Technologies</strong>: <text class="keyword">ReactJS</text>, <text
+                                class="keyword">Redux</text>,
+                            <text class="keyword">Webpack</text>, <text class="keyword">Sass</text>, <text class="keyword">Ant
+                                Design</text>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        
+            <article class="experiences__box">
+                <div class="experiences__designation">
+                    <h3 class="heading-tertiary heading-tertiary--thin experiences__position">Junior Developer</h3>
+                    <p class="experiences__company">PowerGate Software</p>
+                </div>
+        
+                <div class="text-center experiences__date experiences__date--2">
+                    <p class="experiences__date-invisible">
+                        <time datetime="2017-06">06/2017</time>
+                        &mdash;
+                        <time datetime="2018-04">04/2018</time>
+                    </p>
+                    <p class="experiences__date-visible">
+                        <time datetime="2017-06">06/2017</time>
+                        &mdash;
+                        <time datetime="2018-04">04/2018</time>
+                    </p>
+                </div>
+        
+                <div class="experiences__projects">
+                    <ul class="experiences__project">
+                        <li>
+                            <strong>Project</strong>: OneIT CoventryCRM (Australia)
+                        </li>
+                        <li>
+                            <strong>Project Description</strong>: A meeting management application supports people to book
+                            their customer's appointments with anyone whenever they want, from wherever
+                            you are!
+                        </li>
+                        <li>
+                            <strong>Team Size</strong>: 6
+                        </li>
+                        <li>
+                            <strong>Responsibilities</strong>: Communicate with customers and teammates to get clear
+                            requirements
+                            Develop the frameworks and modules of the system
+                        </li>
+                        <li>
+                            <strong>Technologies</strong>: <text class="keyword">Angular 2</text>, <text
+                                class="keyword">HTML5</text>,
+                            <text class="keyword">CSS3</text>, <text class="keyword">Sass</text>, <text
+                                class="keyword">Bootstrap 3</text>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        
+            <article class="experiences__box">
+                <div class="experiences__designation">
+                    <h3 class="heading-tertiary heading-tertiary--thin experiences__position">Pet Project</h3>
+                </div>
+        
+                <div class="text-center experiences__date experiences__date--3">
+                    <p class="experiences__date-invisible">
+                        <time datetime="2015">All The Time</time>
+                    </p>
+                    <p class="experiences__date-visible">
+                        <time datetime="2020">All The Time</time>
+                    </p>
+                </div>
+        
+                <div class="experiences__projects">
+                    <ul class="experiences__project">
+                        <li>
+                            <a class="experiences__project-link" href="https://anhdo95.github.io/Trillo/" target="_blank">Trillo</a> &mdash; An all-in-one
+                            booking app design (<strong class="keyword">Sass</strong>, <strong class="keyword">HTML5</strong>, <strong
+                                class="keyword">CSS3</strong>)
+                        </li>
+                        <li>
+                            <a class="experiences__project-link" href="https://anhdo95.github.io/Nexter/" target="_blank">Nexter</a> &mdash; A house and
+                            apartment selling app design (<strong class="keyword">Sass</strong>, <strong class="keyword">HTML5</strong>, <strong
+                                class="keyword">CSS3</strong>)
+                        </li>
+                        <li>
+                            <a class="experiences__project-link" href="https://anhdo95.github.io/Natours/" target="_blank">Natours</a> &mdash; An exciting tours
+                            for adventure people app design (<strong class="keyword">Sass</strong>, <strong class="keyword">HTML5</strong>,
+                            <strong class="keyword">CSS3</strong>)
+                        </li>
+                        <li>
+                            <a class="experiences__project-link" href="https://node-complete-magazine.herokuapp.com/" target="_blank">Node Magazine</a> &mdash;
+                            Manage the user feed with real-time updates (<strong class="keyword">NodeJS</strong>, <strong class="keyword">GraphQL</strong>, <strong class="keyword">SocketIO</strong>, <strong class="keyword">ReactJS</strong>, <strong class="keyword">Mongodb</strong>)
+                        </li>
+                        <li>
+                            <a class="experiences__project-link" href="https://anhdo95.github.io/SalaryConverter/" target="_blank">Salary Converter</a> &mdash;
+                            Convert GROSS salary from NET to GROSS and vice versa (<strong class="keyword">AngularJS</strong>, <strong class="keyword">HTML5</strong>,
+                            <strong class="keyword">CSS3</strong>)
+                        </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section id="education" class="education">
+            <div class="education__inner">
+                <h2 class="mb-md heading-secondary heading-secondary--special-light education__heading">
+                    Education and Qualification
+                </h2>
+
+                <article class="education__box">
+                    <p class="education__date">
+                        <time datetime="2018">2018</time>
+                        &mdash;
+                        <time datetime="2019">2019</time>
+                    </p>
+                    <a class="education__certification" href="file/agile-developers-certificate.jpg" target="_blank" title="Cerfitication: Agile Developers">Agile Developers</a>
+                    <p class="education__learning-in" title="Learning in: Agile Academy, Vietnam">Agile Academy, Vietnam</p>
+                    <p class="education__specialized-in" title="Specialized in: Information Technology">Information Technology</p>
+                </article>
+
+                <article class="education__box">
+                    <p class="education__date">
+                        <time datetime="2014">2014</time>
+                        &mdash;
+                        <time datetime="2018">2018</time>
+                    </p>
+                    <a class="education__certification" href="#" target="_blank" title="Cerfitication: Engineering">Engineering</a>
+                    <p class="education__learning-in" title="Learning in: Posts and Telecommunications Institute of Technology, Vietnam">PTIT, Vietnam</p>
+                    <p class="education__specialized-in" title="Specialized in: Information Technology">Information Technology</p>
+                </article>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p class="footer__copyright">
+                &copy; Copyright 2019 by Anh Do. All right reservered.
+            </p>
+        </footer>
+    </body>
+</html>
