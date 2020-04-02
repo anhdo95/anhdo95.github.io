@@ -6,17 +6,16 @@ if (navigator.serviceWorker) {
 }
 
 let deferredPrompt
+const sidebarButton = document.querySelector('.sidebar__button')
 
-window.addEventListener('beforeinstallprompt', function(event) {
-  // Prevent the mini-infobar from appearing on mobile
+function handleBeforeInstallPrompt(event) {
+  // Prevent the mini-infobar from appearing on mobile`
   event.preventDefault()
   // Stash the event so it can be triggered later.
   deferredPrompt = event
-})
+}
 
-const sidebarButton = document.querySelector('.sidebar__button')
-
-sidebarButton.addEventListener('click', function(event) {
+function handleSidebarButtonClick(event) {
   if (deferredPrompt) {
     deferredPrompt.prompt()
   
@@ -29,5 +28,11 @@ sidebarButton.addEventListener('click', function(event) {
     })
   
     deferredPrompt = null
+
+    window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
+    sidebarButton.removeEventListener('click', handleSidebarButtonClick)
   }
-})
+}
+
+window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
+sidebarButton.addEventListener('click', handleSidebarButtonClick)
