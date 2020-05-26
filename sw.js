@@ -1,8 +1,8 @@
 const PRE_CACHE_NAME = 'static-v2'
 const DYNAMIC_CACHE_NAME = 'dynamic-v2'
 const STATIC_FILES = [
-  '/',
-  '/index.html',
+  // '/',
+  // '/index.html',
   '/css/style.css',
   '/js/app.js',
   '/img/sprite.svg',
@@ -14,7 +14,7 @@ const STATIC_FILES = [
   '/img/logo.png',
   '/img/logo-2x.png',
   '/img/logo-3x.png',
-  '/file/my-cv.pdf'
+  // '/file/my-cv.pdf'
 ]
 
 self.addEventListener('install', function(event) {
