@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e171ccf0.chunk.css",
+    "main.js": "/static/js/main.83badd09.chunk.js",
+    "main.js.map": "/static/js/main.83badd09.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7d7abd8d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7d7abd8d.js.map",
+    "static/js/2.e479be85.chunk.js": "/static/js/2.e479be85.chunk.js",
+    "static/js/2.e479be85.chunk.js.map": "/static/js/2.e479be85.chunk.js.map",
+    "static/js/3.f678f96d.chunk.js": "/static/js/3.f678f96d.chunk.js",
+    "static/js/3.f678f96d.chunk.js.map": "/static/js/3.f678f96d.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.e171ccf0.chunk.css.map": "/static/css/main.e171ccf0.chunk.css.map",
+    "static/js/2.e479be85.chunk.js.LICENSE.txt": "/static/js/2.e479be85.chunk.js.LICENSE.txt",
+    "static/media/circle-plus.89e827e3.svg": "/static/media/circle-plus.89e827e3.svg",
+    "static/media/clouds.2afd8aee.svg": "/static/media/clouds.2afd8aee.svg",
+    "static/media/default-avatar.522560c8.png": "/static/media/default-avatar.522560c8.png",
+    "static/media/down-arrow.5b40d7c7.svg": "/static/media/down-arrow.5b40d7c7.svg",
+    "static/media/fog.cd8abc95.svg": "/static/media/fog.cd8abc95.svg",
+    "static/media/google.bbce75f8.svg": "/static/media/google.bbce75f8.svg",
+    "static/media/hamburger.60202029.svg": "/static/media/hamburger.60202029.svg",
+    "static/media/logo.1999d954.svg": "/static/media/logo.1999d954.svg",
+    "static/media/rain.dbbcbde3.svg": "/static/media/rain.dbbcbde3.svg",
+    "static/media/storm.3cc98843.svg": "/static/media/storm.3cc98843.svg",
+    "static/media/sunny.70d49e08.svg": "/static/media/sunny.70d49e08.svg",
+    "static/media/up-arrow.002996b7.svg": "/static/media/up-arrow.002996b7.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7d7abd8d.js",
+    "static/js/2.e479be85.chunk.js",
+    "static/css/main.e171ccf0.chunk.css",
+    "static/js/main.83badd09.chunk.js"
+  ]
+}
